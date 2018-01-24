@@ -1,0 +1,22 @@
+<p>
+  {{ printThis}}
+</p>
+
+<ul>
+  <li *ngFor="let image of mediaArray">
+    <p>Title: {{image.title}}</p>
+    <img [src]="mediaService.mediaUrl + thumbNailer(image.filename)"/>
+    <!--use tn 320 -->
+    <p>Desc: {{image.description}}</p>
+  </li>
+</ul>
+
+  <input [(ngModel)]="input" type="text" placeholder="TypeStopNameHere">
+  <button (click)="getStop(input)">Check routes</button>
+
+<ul>
+  <li *ngFor="let stop of stopsArray">
+    <!--<p *ngFor="let i of stop.patterns"> {{i.route.longName + "  Route number:" + i.route.shortName}}</p>-->
+    <p *ngFor="let i of stop.patterns"> {{i.name}}</p>
+  </li>
+</ul>
